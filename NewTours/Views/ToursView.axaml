@@ -3,11 +3,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="NewTours.ToursView">
+             x:Class="NewTours.ToursView"
+			 xmlns:vm="using:NewTours.ViewModels"
+			 x:DataType="vm:ToursViewModel">
 	<StackPanel>
-		<StackPanel Classes="oneLine">
-			<TextBlock>Введите текст для поиска:</TextBlock>
-			<TextBox></TextBox>
+		<StackPanel Classes="filterSP">
+			<StackPanel Classes="oneLine">
+				<TextBlock Classes="filterTB">Введите текст для поиска:</TextBlock>
+				<TextBox Classes="searchLine"></TextBox>
+			</StackPanel>
+			<StackPanel Classes="oneLine">
+				<TextBlock Classes="filterTB">Выберите тип:</TextBlock>
+				<ComboBox Classes="selectType"></ComboBox>
+			</StackPanel>
+			<StackPanel Classes="oneLine">
+				<CheckBox>Только актуальные</CheckBox>
+			</StackPanel>
 		</StackPanel>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100"></RowDefinition>
+				<RowDefinition Height="4*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<StackPanel Classes="toursList">
+				
+			</StackPanel>
+		</Grid>
 	</StackPanel>
 </UserControl>

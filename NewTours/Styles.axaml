@@ -5,15 +5,36 @@
      
     </Border>
   </Design.PreviewWith>
-
-	<Style Selector="StackPanel.oneLine">
-		<Setter Property="Orientation" Value="Horizontal"/>
+	
+	<Style Selector="StackPanel.filterSP">
+		<Setter Property="Margin" Value="10 30 0 0"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
+	</Style>
+
+	<Style Selector="TextBlock.filterTB">
+		<Setter Property="FontFamily" Value="Comic Sans MS"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 
-	<Style Selector="TextBox">
+	<Style Selector="StackPanel.oneLine">
+		<Setter Property="Margin" Value="0 5 0 5"/>
+		<Setter Property="Orientation" Value="Horizontal"/>
+		<Setter Property="HorizontalAlignment" Value="Right"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+
+	<Style Selector="TextBox.searchLine">
 		<Setter Property="Margin" Value="10 0 0 0"/>
 		<Setter Property="Width" Value="200"/>
+	</Style>
+
+	<Style Selector="ComboBox.selectType">
+		<Setter Property="Margin" Value="10 0 0 0"/>
+		<Setter Property="Width" Value="200"/>
+	</Style>
+
+	<Style Selector="StackPanel.toursList">
+		<Setter Property="Grid.Row" Value="1"/>
+		<Setter Property="Orientation" Value="Horizontal"/>
 	</Style>
 </Styles>
