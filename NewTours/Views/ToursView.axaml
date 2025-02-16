@@ -5,29 +5,67 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="NewTours.ToursView"
 			 xmlns:vm="using:NewTours.ViewModels"
-			 x:DataType="vm:ToursViewModel">
-	<StackPanel>
-		<StackPanel Classes="filterSP">
-			<StackPanel Classes="oneLine">
-				<TextBlock Classes="filterTB">Введите текст для поиска:</TextBlock>
-				<TextBox Classes="searchLine"></TextBox>
-			</StackPanel>
-			<StackPanel Classes="oneLine">
-				<TextBlock Classes="filterTB">Выберите тип:</TextBlock>
-				<ComboBox Classes="selectType"></ComboBox>
-			</StackPanel>
-			<StackPanel Classes="oneLine">
-				<CheckBox>Только актуальные</CheckBox>
-			</StackPanel>
+			 x:DataType="vm:ToursViewModel"
+	xmlns:conv="using:NewTours.Converters">
+
+	<UserControl.Resources>
+		<conv:Converter x:Key="myImage"/>
+	</UserControl.Resources>
+	<ScrollViewer>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition Height="100"></RowDefinition>
+			<RowDefinition Height="8*"></RowDefinition>
+		</Grid.RowDefinitions>
+		
+		<StackPanel>
+			
+				<StackPanel Classes="filterSP">
+					<StackPanel Classes="oneLine">
+						<TextBlock Classes="filterTB">Введите текст для поиска:</TextBlock>
+						<TextBox Text="{Binding SearchLine}" Classes="searchLine"></TextBox>
+					</StackPanel>
+					<StackPanel Classes="oneLine">
+						<TextBlock Classes="filterTB">Выберите тип:</TextBlock>
+						<ComboBox Classes="selectType" ItemsSource="{Binding TypeList}" SelectedItem="{Binding SelectedType}">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Type1}"></TextBlock>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel Classes="oneLine">
+						<CheckBox IsChecked="{Binding CheckActual}">Только актуальные</CheckBox>
+					</StackPanel>
+				</StackPanel>
+				<ListBox Classes="toursListInside" ItemsSource="{Binding TourList}">
+					<ListBox.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel></WrapPanel>
+						</ItemsPanelTemplate>
+					</ListBox.ItemsPanel>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Border Classes="toursBorder">
+								<StackPanel Classes="tourEl">
+									<TextBlock Classes = "tourName" Text="{Binding Name}"></TextBlock>
+									<Image Classes ="toursListImage" Source="{Binding ImagePreview, Converter={StaticResource myImage}}"></Image>
+									<TextBlock Classes="Price" Text="{Binding StringPrice}"></TextBlock>
+									<StackPanel Classes="oneLine1">
+										<TextBlock  Classes = "isActual isActualOr" Text="{Binding Actual}"></TextBlock>
+										<TextBlock  Classes = "isActual isTicketCountOr" Text="{Binding TicketCount, StringFormat=Билетов: {0}}"></TextBlock>
+									</StackPanel>
+									
+								</StackPanel>
+							</Border>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			
 		</StackPanel>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="100"></RowDefinition>
-				<RowDefinition Height="4*"></RowDefinition>
-			</Grid.RowDefinitions>
-			<StackPanel Classes="toursList">
-				
-			</StackPanel>
-		</Grid>
-	</StackPanel>
+			
+	</Grid>
+</ScrollViewer>
 </UserControl>

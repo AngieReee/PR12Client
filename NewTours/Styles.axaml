@@ -5,6 +5,10 @@
      
     </Border>
   </Design.PreviewWith>
+
+	<Style Selector="TextBlock">
+		<Setter Property="FontFamily" Value="Comic Sans MS"/>
+	</Style>
 	
 	<Style Selector="StackPanel.filterSP">
 		<Setter Property="Margin" Value="10 30 0 0"/>
@@ -12,7 +16,6 @@
 	</Style>
 
 	<Style Selector="TextBlock.filterTB">
-		<Setter Property="FontFamily" Value="Comic Sans MS"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 
@@ -36,5 +39,57 @@
 	<Style Selector="StackPanel.toursList">
 		<Setter Property="Grid.Row" Value="1"/>
 		<Setter Property="Orientation" Value="Horizontal"/>
+	</Style>
+
+	<Style Selector="Border.toursBorder">
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="BorderBrush" Value="Black"/>
+	</Style>
+
+	<Style Selector="TextBlock.tourName">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="19"/>
+		<Setter Property="Margin" Value="10"/>
+	</Style>
+
+	<Style Selector="TextBlock.isActual">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="Margin" Value="10"/>
+	</Style>
+
+	<Style Selector="TextBlock.isActualOr">
+		<Setter Property="HorizontalAlignment" Value="Left"/>
+	</Style>
+
+	<Style Selector="TextBlock.isTicketCountOr">
+		<Setter Property="HorizontalAlignment" Value="Right"/>
+	</Style>
+
+	<Style Selector="TextBlock.Price">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="17"/>
+	</Style>
+
+	<Style Selector="ListBox.toursListInside">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+	
+	<Style Selector="Image.toursListImage">
+		<Setter Property="Width" Value="320"/>
+		<Setter Property="Height" Value="320"/>
+		<Setter Property="Margin" Value="10"/>
+	</Style>
+
+	<Style Selector="StackPanel.tourEl">
+		<Setter Property="Height" Value="450"/>
+		<Setter Property="Width" Value="500"/>
+	</Style>
+
+	<Style Selector="StackPanel.oneLine1">
+		<Setter Property="Orientation" Value="Horizontal"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
 	</Style>
 </Styles>
