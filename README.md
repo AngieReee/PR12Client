@@ -26,7 +26,7 @@
 2. Дождаться загрузки решения
 3. Выполнить отладку
 
-<p align="center"><img  src="./images/main.gif" width="70%"></p>
+![](https://github.com/AngieReee/PR12Client/blob/master/images/main.gif)
 
 ## Авторы
 * **Сухарева Анжелика** - *разработчик API* - [Сухарева Анжелика](https://github.com/AngieReee) 
