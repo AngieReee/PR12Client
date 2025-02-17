@@ -56,4 +56,4 @@
 ![](https://github.com/AngieReee/PR12Client/blob/master/images/main.gif)
 
 ## Авторы
-* **Сухарева Анжелика** - *разработчик API* - [Сухарева Анжелика](https://github.com/AngieReee) 
+* *разработчик API* - [Сухарева Анжелика](https://github.com/AngieReee) 
